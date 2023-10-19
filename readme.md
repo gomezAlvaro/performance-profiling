@@ -50,7 +50,7 @@ When you run the application, you can access the Glowroot UI at http://localhost
 Run `ProfiledApp.java` with the Glowroot agent.
 
 ## Run the load tests
-Run `LoadTest.java` and click the report printed in the console at the end.
+Run `LoanLoadTest.java` and click the report printed in the console at the end.
 If successful, the generated HTML report should display a green bar like this:
 ![img.png](art/gatling.png)
 

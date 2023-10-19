@@ -91,6 +91,21 @@ public class LoanService {
     dbData.stream().map(i -> new Payment().setId(i)).forEach(entityManager::persist);
     log.info("DONE");
   }
+
+  public void getBasic() throws InterruptedException {
+    Thread.sleep(2000);
+    myFirstMethod();
+    mySecondMethod();
+  }
+
+  private void mySecondMethod() throws InterruptedException {
+    Thread.sleep(2000);
+  }
+
+  private void myFirstMethod() throws InterruptedException {
+    Thread.sleep(2000);
+
+  }
   //</editor-fold>
 
 }

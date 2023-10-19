@@ -34,7 +34,7 @@ public class GDPRAspect {
     if (resultDto == null) {
       return null;
     }
-    if (!resultDto.getClass().getPackageName().startsWith("victor")) {
+    if (!resultDto.getClass().getPackageName().startsWith("training")) {
       return resultDto;
     }
 

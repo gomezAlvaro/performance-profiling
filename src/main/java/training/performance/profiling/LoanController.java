@@ -19,6 +19,12 @@ public class LoanController {
     return loanService.getLoanApplication(id);
   }
 
+  @GetMapping("basic")
+  public void get() throws InterruptedException {
+    loanService.getBasic();
+  }
+
+
   @PostMapping("loan/{title}")
   public void save(@PathVariable String title) {
     loanService.saveLoanApplication(title);

@@ -6,16 +6,16 @@ import static io.gatling.javaapi.core.CoreDsl.scenario;
 import static io.gatling.javaapi.http.HttpDsl.http;
 import static java.time.Duration.ofSeconds;
 
-public class LoadTest extends Simulation {
+public class BasicLoadTest extends Simulation {
   public static void main(String[] args) {
-    GatlingEngine.startClass(LoadTest.class);
+    GatlingEngine.startClass(BasicLoadTest.class);
   }
 
   {
     String host = "http://localhost:8080";
 
     setUp(scenario(getClass().getSimpleName()).exec(http("")
-                    .get("/loan/1"))
+                    .get("/basic"))
             .injectClosed(constantConcurrentUsers(23).during(ofSeconds(8))))
 
             .protocols(http.baseUrl(host));
