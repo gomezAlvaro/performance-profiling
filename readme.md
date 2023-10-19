@@ -43,7 +43,6 @@ Unzip the dist zip, locate the `glowroot.jar` and copy the path to it.
 Add glowroot.jar as a java agent to your application by adding `-javaagent:/path/to/glowroot.jar`.
 You can do that in IntelliJ by filling the 'VM option' field of your run configuration.
 
-You must use <= Java 11 for Glowroot to work.
 When you run the application, you can access the Glowroot UI at http://localhost:4000. You should see a page like this:
 ![img.png](art/glowroot.png)
 
