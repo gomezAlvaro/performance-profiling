@@ -43,6 +43,4 @@ public class BasicService {
     Thread.sleep(2000);
 
   }
-  //</editor-fold>
-
 }

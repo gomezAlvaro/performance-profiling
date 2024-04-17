@@ -33,7 +33,7 @@ public class LoanService {
     List<CommentDto> comments = commentsApiClient.fetchComments(loanId); // takes ±40ms in prod
     LoanApplication loanApplication = loanApplicationRepo.findByIdLoadingSteps(loanId); // move this line first for x-fun
     LoanApplicationDto dto = new LoanApplicationDto(loanApplication, comments);
-    log.trace("Loan app: " + loanApplication);
+    //log.trace("Loan app: " + loanApplication);
     return dto;
   }
 
@@ -92,20 +92,6 @@ public class LoanService {
     log.info("DONE");
   }
 
-  public void getBasic() throws InterruptedException {
-    Thread.sleep(2000);
-    myFirstMethod();
-    mySecondMethod();
-  }
-
-  private void mySecondMethod() throws InterruptedException {
-    Thread.sleep(2000);
-  }
-
-  private void myFirstMethod() throws InterruptedException {
-    Thread.sleep(2000);
-
-  }
   //</editor-fold>
 
 }

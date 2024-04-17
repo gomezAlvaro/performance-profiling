@@ -30,20 +30,23 @@ public class GDPRAspect {
 
   @Around("@within(org.springframework.web.bind.annotation.RestController))")
   public Object clearNonVisibleFields(ProceedingJoinPoint pjp) throws Throwable {
+    // well done finding this! we're spending some time in here, but do we need to do so? can we improve the code somehow?
     Object resultDto = pjp.proceed();
     if (resultDto == null) {
       return null;
     }
-    if (!resultDto.getClass().getPackageName().startsWith("training")) {
+    if (!resultDto.getClass().getSimpleName().equals("LoanApplicationDto")) {
       return resultDto;
     }
 
-    String userJurisdiction = fetchJurisdiction(); // network call
-
     List<Field> annotatedFields = getAnnotatedFields(resultDto);
+
+    String userJurisdiction = fetchJurisdiction();
+
     if (annotatedFields.isEmpty()) {
-      return resultDto; // TODO move this pre-check BEFORE the expensive network call
+      return resultDto;
     }
+
 
 
     clearFields(resultDto, userJurisdiction, annotatedFields);

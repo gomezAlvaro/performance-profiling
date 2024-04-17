@@ -14,7 +14,6 @@ public class PerformanceUtil {
         RuntimeMXBean runtimeMxBean = ManagementFactory.getRuntimeMXBean();
         List<String> arguments = runtimeMxBean.getInputArguments();
         Optional<String> jfrArg = arguments.stream()
-//              .filter(a -> a.contains("StartFlightRecording"))
                 .filter(a -> a.contains("jfr"))
                 .findFirst();
         if (jfrArg.isPresent()) {
